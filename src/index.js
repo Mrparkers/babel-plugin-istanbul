@@ -14,6 +14,7 @@ function getRealpath (n) {
 
 let exclude
 function shouldSkip (file, opts) {
+  console.log(process.env.NYC_CWD || getRealpath(process.cwd()));
   if (!exclude) {
     exclude = testExclude(Object.keys(opts).length > 0 ? opts : {
       cwd: process.env.NYC_CWD || getRealpath(process.cwd()),
